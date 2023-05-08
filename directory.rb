@@ -18,7 +18,7 @@ def input_students
   
   students = []
   
-  input = gets.chomp
+  input = gets.delete_suffix("\n")
   while !input.empty? do
 
     name, cohort = input.split(',')
@@ -28,7 +28,7 @@ def input_students
     students << {name: name, cohort: :november}
     puts "now we have #{students.count} students"
     
-  input = gets.chomp
+    input = gets.delete_suffix("\n")
   end
   
   students
